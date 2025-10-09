@@ -1,0 +1,110 @@
+/* Tổng web */
+.app {
+  background-color: var(--background-app);
+}
+/* Header */
+.header {
+  width: 100%;
+  min-height: 120px;
+  background: var(--background-header);
+  border-radius: 0px 0px 15px 15px;
+}
+/* --Navbar-- */
+/* Navbar trái phải */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Danh sách item trong navbar */
+.navbar_list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 3px;
+  margin-bottom: 4px;
+}
+/* Item trong navbar */
+.navbar-item {
+  margin: 0px 15px;
+  position: relative;
+  font-weight: 700;
+  display: inline-block;
+  color: var(--white-color);
+  font-size: 1.5rem;
+}
+/* Liên kết trong navbar */
+.navbar-item_link {
+  color: var(--white-color);
+  text-decoration: none;
+}
+/* Nhạt màu chữ */
+.navbar-item_link:hover {
+  color: var(--pale-white);
+}
+/* Nút đăng ký, đăng nhập */
+.navbar-item_button {
+  background: var(--pale-white1);
+  border-radius: 5px;
+  padding: 6px 12px;
+  min-width: 100px;
+  color: var(--white-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+/* Hiệu ứng đăng ký, đăng nhập */
+.navbar-item_button:hover {
+  background-color: var(--red-color);
+  animation: gradually__opaque ease-in 0.5s;
+}
+/* Dấu chia | */
+.navbar-item_link-separate::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 16px;
+  background: var(--pale-white);
+  right: -17px;
+  top: 5%;
+}
+/* Mã QR */
+/* Hiển thị mã QR khi hover vào item */
+.navbar-item__qr:hover .navbar__qr {
+  display: block;
+}
+/* Chỉnh QR code */
+.navbar__qr {
+  position: absolute;
+  background: var(--background-app);
+  width: 186px;
+  padding: 10px;
+  top: calc(100% + 16px);
+  border-radius: 5px;
+  display: none;
+  animation: gradually__opaque ease-in 0.5s;
+}
+/* Tạo vùng đệm để QR không bị biến mất */
+.navbar__qr::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  top: -20px;
+}
+/* Anhr QR */
+.navbar__qr-img {
+  width: 100%;
+
+  border-radius: 5px;
+}
+/* Hộp chứa icon app */
+.qr__app {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 0 0;
+}
+/* Icon tải app */
+.qr__app-link {
+  height: 17px;
+}
