@@ -1,14 +1,11 @@
-/* Khai báo biến */
 :root {
   --white-color: #ffffff;
-  --background-header: linear-gradient(#e55463 0%, #ff0a0a 100%);
-  --red-color: red;
   --text-color: #333;
+  --background-header: linear-gradient(#e55463 0%, #ff0a0a 100%);
+  --pale-white: rgba(255, 255, 255, 0.7);
   --background-app: #f5f5f5;
-  --pale-white: rgba(255, 255, 255, 0.75);
-  --pale-white1: rgba(255, 255, 255, 0.3);
 }
-/* Reset */
+
 * {
   box-sizing: inherit;
 }
@@ -16,41 +13,30 @@
 html {
   font-size: 62.5%;
   line-height: 1.6rem;
-  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-body {
-  margin: 0px;
-  padding: 0px;
-}
-/* Hiển thị Responsive */
 .grid {
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
 }
-/* Full chiều rộng */
+
 .grid__full-width {
   width: 100%;
 }
-/* Xuống dòng và 1 dòng */
-.grid__grow {
+
+.grid__cow {
   display: flex;
   flex-wrap: wrap;
 }
-/* Hiệu ứng rõ dần */
-@keyframes gradually__opaque {
+
+@keyframes FadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
-}
-/* Reset nút chung */
-button {
-  border: none;
-  outline: none;
-  background: none;
 }
