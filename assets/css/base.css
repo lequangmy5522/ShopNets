@@ -16,7 +16,7 @@ html {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-
+/* Responsive */
 .grid {
   width: 1200px;
   max-width: 100%;
