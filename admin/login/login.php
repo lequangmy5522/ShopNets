@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user_id']) && $_SESSION['role'] === 'admin') {
+    header('Location: ../index.php');  
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -25,24 +34,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/pages/login.css" />
+    <link rel="stylesheet" href="../assets/css/pages/login-effects.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/login.js"></script>
 </head>
 <body>
   <main class="page">
     <div class="auth-card">
       <section class="left">
         <header class="brand">
-          <img src="../assets/images/icons/icons_logo/apple-icon-180x180.png" alt="ShopNet" class="logo" />
+          <img src="../assets/images/icons/icons_logo/apple-icon-180x180.png?v=<?php echo time(); ?>" alt="ShopNet" class="logo" />
           <h1 class="name">ShopNet</h1>
           <p class="subtitle">Login into account</p>
         </header>
 
-        <form class="form" action="#" method="post" autocomplete="off">
+        <form class="form" action="login_action.php" method="post" autocomplete="off">
           <div class="field">
             <label for="email">Email address</label>
             <div class="control with-icon">
-              <input type="email" id="email" name="email" placeholder="gmail@email.com" required />
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
               <span class="icon">
-                <!-- mail icon -->
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                   <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
                 </svg>
@@ -55,7 +66,6 @@
             <div class="control with-icon">
               <input type="password" id="password" name="password" placeholder="Enter your password" required />
               <span class="icon">
-                <!-- lock icon -->
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                   <path fill="currentColor" d="M17 8h-1V6a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-6 0V6a3 3 0 1 1 6 0v2h-6Z"/>
                 </svg>
@@ -68,9 +78,17 @@
       </section>
 
       <section class="right">
-        <img src="../assets/images/icons/Login.png" alt="Login" class="hero" />
+        <img src="../assets/images/icons/Login.png?v=<?php echo time(); ?>" alt="Login" class="hero" />
       </section>
     </div>
   </main>
+
+  <div id="loadingOverlay">
+    <div class="loading-modal">
+      <div class="loading-spinner"></div>
+      <p id="loadingText"></p>
+      <p id="loadingSubtext"></p>
+    </div>
+  </div>
 </body>
 </html>
