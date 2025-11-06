@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <title>ShopNets - Mua sắm tiện lợi</title>
+  </head>
+  <body>
+    <div class="app">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="grid">
+          <nav class="nav">
+            <!-- Navbar bên trái -->
+            <ul class="nav__list">
+              <li class="nav__item nav__item-separate">
+                <a
+                  href="../assets/images/qr.png"
+                  class="nav__link"
+                  target="_blank"
+                  >Tải ứng dụng ShopNets</a
+                >
+                <div class="nav__qr">
+                  <img
+                    src="../assets/images/qr.png"
+                    alt="Ảnh QR"
+                    class="nav__img"
+                  />
+                  <div class="nav__app">
+                    <a
+                      href="https://apps.apple.com/vn/app/10-10-shopee-th%C6%B0%C6%A1ng-hi%E1%BB%87u/id959841449?l=vi"
+                      class="nav__app-link"
+                      target="_blank"
+                      ><img
+                        src="../assets/images/appstore.png"
+                        alt="Tải ứng dụng trên AppStore"
+                        class="nav__app-icon"
+                    /></a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.shopee.vn"
+                      class="nav__app-link"
+                      target="_blank"
+                      ><img
+                        src="../assets/images/google-play.png"
+                        alt="Tải ứng dụng trên CH Play"
+                        class="nav__app-icon"
+                    /></a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav__item">
+                Kết nối
+                <a href="#" class="nav__link"><i class="bi bi-facebook"></i></a>
+                &nbsp;
+                <a href="#" class="nav__link"><i class="bi bi-instagram"></i></a>
+              </li>
+            </ul>
+            <!-- Navbar bên phải -->
+            <ul class="nav__list">
+              <li class="nav__item nav__item-hover nav__item-separate">
+                <div class="notify-icon">
+                  <i class="bi bi-bell-fill"></i>
+                  <span class="notify-badge"></span>
+                </div>&nbsp;Thông báo
+                <div class="notify">
+                  <header class="notify__header">
+                    <h3 class="notify__header-content">Thông Báo Của Bạn</h3>
+                  </header>
+              
+                  <ul class="notify__list">
+                    <li class="notify__item">
+                      <img src="../assets/images/notify_order.png" alt="">
+                      <div class="notify__info">
+                        <h4>Đơn hàng #1234 đã được xác nhận</h4>
+                        <p>ShopNets: Cảm ơn bạn đã mua hàng!</p>
+                      </div>
+                    </li>
+                    <li class="notify__item">
+                      <img src="../assets/images/notify_sale.png" alt="">
+                      <div class="notify__info">
+                        <h4>Sản phẩm “iPhone 15 Pro” giảm giá 10%</h4>
+                        <p>Chương trình chỉ diễn ra trong hôm nay!</p>
+                      </div>
+                    </li>
+                    <li class="notify__item">
+                      <img src="../assets/images/notify_delivery.png" alt="">
+                      <div class="notify__info">
+                        <h4>Đơn hàng #1229 đang được giao</h4>
+                        <p>Đơn vị vận chuyển: Giao Hàng Nhanh</p>
+                      </div>
+                    </li>
+                  </ul>
+              
+                  <footer class="notify__footer">
+                    <a href="#">Xem tất cả thông báo</a>
+                  </footer>
+                </div>
+              </li>
+              
+              
+              <li class="nav__item nav__item-separate">
+                <a href="#" class="nav__link"
+                  ><i class="bi bi-info-circle-fill"></i>&nbsp;Trợ giúp</a
+                >
+              </li>
+              <li class="nav__item nav__item-hover">
+                <i class="bi bi-globe2"></i>&nbsp;Ngôn ngữ
+              </li>
+              <li class="nav__account">
+                <a href="#" class="nav__link">Đăng nhập</a>
+              </li>
+              <li class="nav__account">
+                <a href="#" class="nav__link">Đăng ký</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Header with search -->
+          <div class="header-with-search">
+            <!-- Logo -->
+            <div class="logo">
+              <img
+                src="../assets/images/logo.png"
+                alt="Logo của shop"
+                class="logo__img"
+              />
+            </div>
+            <!-- Search -->
+            <div class="search">
+              <div class="search__wrap">
+                <input
+                  type="text"
+                  placeholder="Nhập để tìm kiếm sản phẩm ...."
+                  class="search__input"
+                />
+                <div class="search__history">
+                  <header class="header__history">
+                    <h3 class="header__history-content">Lịch Sử Tìm Kiếm</h3>
+                  </header>
+                </div>
+              </div>
+              <button class="search__btn">
+                <i class="search__btn-icon bi bi-search"></i>
+              </button>
+            </div>
+            <!-- Giỏ hàng -->
+            <div class="cart">
+              <a href="cart.html" class="cart__link">
+                <i class="bi bi-cart3"></i>
+                <span id="cart-count" class="cart__count">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Container -->
+      <div class="container">
+        <div class="grid">
+          <h2 class="category__title">Tivi</h2>
+      
+          <div class="product-grid">
+            <div class="product-item">
+              <img src="../assets/images/lg-oled.jpg" alt="LG OLED C3" class="product-img" />
+              <h3 class="product-name">LG OLED C3 55 inch 4K</h3>
+              <p class="product-price">29.990.000₫</p>
+              <button class="product-btn"
+                onclick="addToCart('LG OLED C3 55 inch 4K', 29990000, '../assets/images/lg-oled.jpg')">
+                <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
+              </button>
+            </div>
+      
+            <div class="product-item">
+              <img src="../assets/images/samsung-qled.jpg" alt="Samsung QLED 75" class="product-img" />
+              <h3 class="product-name">Samsung QLED 75 inch Q80C</h3>
+              <p class="product-price">42.490.000₫</p>
+              <button class="product-btn"
+                onclick="addToCart('Samsung QLED 75 inch Q80C', 42490000, '../assets/images/samsung-qled.jpg')">
+                <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <p>© 2025 ShopNets. All rights reserved.</p>
+      </footer>
+    </div>
+    <!-- JS giỏ hàng -->
+    <script>
+      function addToCart(name, price, img) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+          existing.quantity++;
+        } else {
+          cart.push({ name, price, img, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert('✅ Đã thêm ' + name + ' vào giỏ hàng!');
+      }
+
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cart-count').textContent = count;
+      }
+
+      document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+  </body>
+</html>

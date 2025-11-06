@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <title>ShopNets - Điện thoại</title>
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="grid">
+          <div class="header-with-search">
+            <!-- Logo -->
+            <div class="logo">
+              <a href="index.html">
+                <img src="../assets/images/logo.png" alt="Logo" class="logo__img" />
+              </a>
+            </div>
+
+            <!-- Thanh tìm kiếm -->
+            <div class="search">
+              <input type="text" placeholder="Tìm kiếm sản phẩm..." class="search__input" />
+              <button class="search__btn">
+                <i class="search__btn-icon bi bi-search"></i>
+              </button>
+            </div>
+
+            <!-- Giỏ hàng -->
+            <div class="cart">
+              <a href="cart.html" class="cart__link">
+                <i class="bi bi-cart3"></i>
+                <span id="cart-count" class="cart__count">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTAINER -->
+      <div class="container">
+        <div class="grid">
+          <h2 class="category__title">Điện thoại nổi bật</h2>
+
+          <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-item">
+              <img src="../assets/images/iphone15.jpg" alt="iPhone 15 Pro" class="product-img" />
+              <h3 class="product-name">iPhone 15 Pro Max 256GB</h3>
+              <p class="product-price">31.990.000₫</p>
+              <button class="product-btn"
+                onclick="addToCart('iPhone 15 Pro Max 256GB', 31990000, '../assets/images/iphone15.jpg')">
+                <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
+              </button>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-item">
+              <img src="../assets/images/samsung-s24.jpg" alt="Samsung S24 Ultra" class="product-img" />
+              <h3 class="product-name">Samsung Galaxy S24 Ultra</h3>
+              <p class="product-price">27.490.000₫</p>
+              <button class="product-btn"
+                onclick="addToCart('Samsung Galaxy S24 Ultra', 27490000, '../assets/images/samsung-s24.jpg')">
+                <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p>© 2025 ShopNets. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- JS giỏ hàng -->
+    <script>
+      function addToCart(name, price, img) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+          existing.quantity++;
+        } else {
+          cart.push({ name, price, img, quantity: 1 });
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert('✅ Đã thêm ' + name + ' vào giỏ hàng!');
+      }
+
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cart-count').textContent = count;
+      }
+
+      document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+  </body>
+</html>
