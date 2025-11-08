@@ -46,7 +46,45 @@
       <div></div>
       <div class="actions">
         <span class="icon"><img src="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/images/icons/Notification.png" alt="Notifications"></span>
-        <span class="icon"><img src="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/images/icons/Dark.png" alt="Theme"></span>
+        <span class="icon" id="themeToggle" onclick="toggleTheme()" style="cursor: pointer;">
+          <img id="themeIcon" src="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/images/icons/Light.png" alt="Theme">
+        </span>
         <span class="icon"><img src="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/images/icons/Profile.png" alt="Profile"></span>
       </div>
     </header>
+
+<script>
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('themeIcon');
+    const baseUrl = '<?php echo isset($baseUrl) ? $baseUrl : ''; ?>';
+    
+    body.classList.toggle('dark-theme');
+    
+    if (body.classList.contains('dark-theme')) {
+        themeIcon.src = baseUrl + 'assets/images/icons/Light.png';
+        themeIcon.alt = 'Switch to Light Mode';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.src = baseUrl + 'assets/images/icons/Dark.png';
+        themeIcon.alt = 'Switch to Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const themeIcon = document.getElementById('themeIcon');
+    const baseUrl = '<?php echo isset($baseUrl) ? $baseUrl : ''; ?>';
+    
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        themeIcon.src = baseUrl + 'assets/images/icons/Light.png';
+        themeIcon.alt = 'Switch to Light Mode';
+    } else {
+        themeIcon.src = baseUrl + 'assets/images/icons/Dark.png';
+        themeIcon.alt = 'Switch to Dark Mode';
+    }
+});
+</script>

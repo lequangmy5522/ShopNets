@@ -47,7 +47,7 @@ if (empty($email) || empty($password)) {
 }
 
 try {
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
+    $stmt = $pdo->prepare("SELECT * FROM admin WHERE email = ? LIMIT 1");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
 

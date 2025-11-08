@@ -22,7 +22,9 @@
   <meta name="msapplication-TileImage" content="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/images/icons/icons_logo/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/admin.css">
+  <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/components/modals.css">
   <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/pages/logout.css">
+  <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/base/dark-theme.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
