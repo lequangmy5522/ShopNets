@@ -23,8 +23,11 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/admin.css">
   <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/components/modals.css">
+  <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/components/profile-popup.css">
   <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/pages/logout.css">
-  <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/base/dark-theme.css">
+  <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/base/dark-theme.css"><?php if (isset($currentPage) && $currentPage === 'settings'): ?>
+  <link rel="stylesheet" href="<?php echo isset($baseUrl) ? $baseUrl : ''; ?>assets/css/pages/settings.css">
+  <?php endif; ?>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>

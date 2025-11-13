@@ -49,7 +49,8 @@ function handleLogoutError() {
 $(document).ready(function() {
   window.adminBaseUrl = window.adminBaseUrl || '';
   
-  $('.topbar .actions .icon:last-child').on('click', function(event) {
+  // Only handle logout for specific logout buttons
+  $('#logoutBtn').on('click', function(event) {
     handleLogout(event);
   });
 
