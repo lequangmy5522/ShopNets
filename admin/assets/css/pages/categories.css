@@ -1,0 +1,19 @@
+.categories-page .card-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: black;
+  margin: 0;
+}
+
+.search-box input {
+  border: 1px solid #000;
+}
+
+.data-table th {
+  border-bottom: 3px solid #e5e7eb;
+}
+
+.search-box::before {
+  width: 20px;
+  height: 20px;
+}
